@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "@sablier/devkit",
+      "name": "@prb/devkit",
       "devDependencies": {
         "@biomejs/biome": "^2.5.0",
         "prettier": "^3.8.3",

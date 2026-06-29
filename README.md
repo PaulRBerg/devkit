@@ -1,21 +1,21 @@
-# 🛠️ Sablier Devkit
+# 🛠️ Devkit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![npm](https://img.shields.io/npm/v/@sablier/devkit)](https://www.npmjs.com/package/@sablier/devkit)
+[![npm](https://img.shields.io/npm/v/@prb/devkit)](https://www.npmjs.com/package/@prb/devkit)
 
-Configuration files and reusable scripts for Sablier repositories. Designed to be extended and customized as needed.
+Personal configuration files and reusable scripts. Designed to be extended and customized as needed.
 
 ## 📦 Installation
 
 ```bash
-npm install @sablier/devkit
+npm install @prb/devkit
 ```
 
 Or with other package managers:
 
 ```bash
-pnpm add @sablier/devkit
-bun add @sablier/devkit
+pnpm add @prb/devkit
+bun add @prb/devkit
 ```
 
 ## 🚀 Usage
@@ -27,7 +27,7 @@ Extend the base Biome configuration in your `biome.jsonc`:
 ```jsonc
 {
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
-  "extends": ["@sablier/devkit/biome"],
+  "extends": ["@prb/devkit/biome"],
 }
 ```
 
@@ -35,7 +35,7 @@ For UI projects, use the UI variant:
 
 ```jsonc
 {
-  "extends": ["@sablier/devkit/biome/ui"],
+  "extends": ["@prb/devkit/biome/ui"],
 }
 ```
 
@@ -45,7 +45,7 @@ Reference the Prettier config in your `package.json`:
 
 ```json
 {
-  "prettier": "@sablier/devkit/prettier"
+  "prettier": "@prb/devkit/prettier"
 }
 ```
 
@@ -55,22 +55,22 @@ Extend TSConfig presets in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@sablier/devkit/tsconfig/base"
+  "extends": "@prb/devkit/tsconfig/base"
 }
 ```
 
 Available presets:
 
-- `@sablier/devkit/tsconfig/base` — Base TypeScript configuration
-- `@sablier/devkit/tsconfig/build` — Build-optimized configuration
-- `@sablier/devkit/tsconfig/next` — Next.js configuration
+- `@prb/devkit/tsconfig/base` — Base TypeScript configuration
+- `@prb/devkit/tsconfig/build` — Build-optimized configuration
+- `@prb/devkit/tsconfig/next` — Next.js configuration
 
 ### Vitest
 
 Use the devkit vitest config factory in your `vitest.config.ts`:
 
 ```typescript
-import { defineDevkitConfig } from "@sablier/devkit/vitest";
+import { defineDevkitConfig } from "@prb/devkit/vitest";
 
 export default defineDevkitConfig({
   environment: "jsdom", // or "node" (default), "happy-dom"
@@ -89,7 +89,7 @@ The config provides CI-aware defaults:
 For merging with existing Vite configs:
 
 ```typescript
-import { defineDevkitConfig, mergeConfig } from "@sablier/devkit/vitest";
+import { defineDevkitConfig, mergeConfig } from "@prb/devkit/vitest";
 import { defineConfig } from "vitest/config";
 
 export default mergeConfig(
@@ -107,8 +107,8 @@ export default mergeConfig(
 Import Just recipes in your `justfile`:
 
 ```just
-import "@sablier/devkit/just/base.just"
-import "@sablier/devkit/just/npm.just"
+import "@prb/devkit/just/base.just"
+import "@prb/devkit/just/npm.just"
 ```
 
 Available modules:
@@ -117,7 +117,6 @@ Available modules:
 | --------------- | ------------------------------- |
 | `base.just`     | Common development recipes      |
 | `csv.just`      | CSV/TSV validation with qsv     |
-| `evm.just`      | EVM/Foundry tooling             |
 | `npm.just`      | NPM package management          |
 | `settings.just` | Just settings and configuration |
 | `vercel.just`   | Vercel build and deploy         |
@@ -143,15 +142,11 @@ Reusable composite actions for GitHub CI workflows.
 | [`actions/node-cache`](./actions/node-cache/) | Cache Node.js dependencies                 |
 
 ```yaml
-- uses: sablier-labs/devkit/actions/setup@v1
+- uses: PaulRBerg/devkit/actions/setup@v1
 ```
 
 Dependency caching stores only the package-manager cache, not `node_modules`. Set `save-cache: true` in at most one
 parallel job to publish a refreshed cache.
-
-## 🖥️ Setup Script
-
-For Sablier Labs employees and staff, see [`shell/setup.sh`](./shell/setup.sh).
 
 ## 🤝 Contributing
 

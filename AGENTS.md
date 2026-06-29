@@ -1,17 +1,16 @@
 # CLAUDE.md
 
-Shared configuration library (`@sablier/devkit`) for Sablier repositories. Provides reusable Biome, Prettier,
-TypeScript, Vitest, and Just configs, plus GitHub Actions and shell scripts.
+Personal shared configuration library (`@prb/devkit`). Provides reusable Biome, Prettier, TypeScript, Vitest, and Just
+configs, plus GitHub Actions.
 
 ## Project Structure
 
 ```
 biome/          Biome v2 configs (base.jsonc, ui.jsonc)
-just/           Just recipe modules (base, csv, evm, npm, settings, vercel)
+just/           Just recipe modules (base, csv, npm, settings, vercel)
 tsconfig/       TypeScript presets (base, build, next)
 vitest/         Vitest config factory (base.js)
 actions/        GitHub Actions (setup, node-cache)
-shell/          Setup scripts for Sablier Labs staff
 vscode/         Shared VSCode settings
 tests/          BATS tests for CSV/TSV validation
 ```
@@ -19,12 +18,12 @@ tests/          BATS tests for CSV/TSV validation
 ## Package Exports
 
 ```
-@sablier/devkit/biome       → biome/base.jsonc
-@sablier/devkit/biome/base  → biome/base.jsonc
-@sablier/devkit/biome/ui    → biome/ui.jsonc
-@sablier/devkit/prettier    → .prettierrc.js
-@sablier/devkit/tsconfig/*  → tsconfig/{base,build,next}.json
-@sablier/devkit/vitest      → vitest/base.js
+@prb/devkit/biome       → biome/base.jsonc
+@prb/devkit/biome/base  → biome/base.jsonc
+@prb/devkit/biome/ui    → biome/ui.jsonc
+@prb/devkit/prettier    → .prettierrc.js
+@prb/devkit/tsconfig/*  → tsconfig/{base,build,next}.json
+@prb/devkit/vitest      → vitest/base.js
 ```
 
 ## Commands

@@ -1,5 +1,5 @@
 name: Devkit Setup
-description: Internal composite action for installing the dependencies required for using the devkit
+description: Composite action for installing the dependencies required for using the devkit
 
 inputs:
   frozen-lockfile:
@@ -131,7 +131,7 @@ runs:
       run: npm install -g @antfu/ni
       shell: bash
 
-    - uses: sablier-labs/devkit/actions/node-cache@main
+    - uses: PaulRBerg/devkit/actions/node-cache@main
       if: inputs.enable-cache == 'true'
       id: node-cache
       with:

@@ -1,15 +1,15 @@
 {
-  "name": "@sablier/devkit",
-  "description": "Configuration files and reusable scripts for Sablier repositories",
+  "name": "@prb/devkit",
+  "description": "Personal configuration files and reusable scripts",
   "license": "MIT",
   "type": "module",
-  "version": "1.18.5",
+  "version": "1.0.0",
   "author": {
-    "name": "Sablier Labs Ltd",
-    "url": "https://sablier.com"
+    "name": "Paul Razvan Berg",
+    "url": "https://github.com/PaulRBerg"
   },
   "bugs": {
-    "url": "https://github.com/sablier-labs/devkit/issues"
+    "url": "https://github.com/PaulRBerg/devkit/issues"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.0",
@@ -50,7 +50,6 @@
     "config",
     "devkit",
     "prettier",
-    "sablier",
     "tsconfig",
     "typescript",
     "vitest"
@@ -60,6 +59,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sablier-labs/devkit.git"
+    "url": "git+https://github.com/PaulRBerg/devkit.git"
   }
 }

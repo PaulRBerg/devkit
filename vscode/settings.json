@@ -10,7 +10,6 @@
   "rust-analyzer.inlayHints.typeHints.enable": true,
   "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
   "search.collapseResults": "alwaysCollapse",
-  "solidity.formatter": "forge",
   "workbench.iconTheme": "material-icon-theme",
   "comment-divider.languagesMap": {
     "graphql": ["#", "#"],
@@ -28,7 +27,6 @@
     "python": true,
     "rust": true,
     "shell": true,
-    "solidity": true,
     "toml": true,
     "typescript": true,
     "typescriptreact": true
@@ -54,9 +52,6 @@
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  "[solidity]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
