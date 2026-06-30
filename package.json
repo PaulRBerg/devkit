@@ -3,7 +3,7 @@
   "description": "Personal configuration files and reusable scripts",
   "license": "MIT",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Paul Razvan Berg",
     "url": "https://github.com/PaulRBerg"
