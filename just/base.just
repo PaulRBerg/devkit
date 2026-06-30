@@ -42,7 +42,7 @@ _clean +globs:
 
 # Build with TypeScript
 [no-cd]
-[arg("project", long, short="p", help="Path to tsconfig.json")]
+[arg("project", long, short, help="Path to tsconfig.json")]
 @tsc-build project="tsconfig.json":
     na tsc -p {{ project }}
 alias tb := tsc-build
@@ -134,8 +134,8 @@ alias pw := prettier-write
 
 # Type check with TypeScript (tsgo default, falls back to tsc if unavailable)
 [group("checks"), no-cd, script("bash")]
-[arg("compiler", long, short="c", help="TypeScript compiler (tsgo or tsc)")]
-[arg("project", long, short="p", help="Path to tsconfig.json")]
+[arg("compiler", long, short, help="TypeScript compiler (tsgo or tsc)")]
+[arg("project", long, short, help="Path to tsconfig.json")]
 type-check compiler="tsgo" project="tsconfig.json":
     cmd="{{ compiler }}"
     if [[ "$cmd" == "tsgo" ]] && [[ ! -x "node_modules/.bin/tsgo" ]]; then
