@@ -148,6 +148,12 @@ Reusable composite actions for GitHub CI workflows.
 Dependency caching stores only the package-manager cache, not `node_modules`. Set `save-cache: true` in at most one
 parallel job to publish a refreshed cache.
 
+## 🍴 Fork
+
+This repository is a fork of [`sablier-labs/devkit`](https://github.com/sablier-labs/devkit), reset to `v1.0.0` under
+the `@prb/devkit` name. For the change history prior to this fork, see the
+[upstream `CHANGELOG.md`](https://github.com/sablier-labs/devkit/blob/main/CHANGELOG.md).
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
