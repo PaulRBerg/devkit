@@ -8,6 +8,14 @@ This package does not follow [Semantic Versioning](https://semver.org/spec/v2.0.
 pragmatically: any release may include breaking changes regardless of the version number, and the major version is not
 reserved for breaking changes. Review the changelog before upgrading.
 
+## [1.0.2] - 2026-07-08
+
+### Changed
+
+- Simplify `type-check` to use `tsc` directly ([`b0df560`](https://github.com/PaulRBerg/devkit/commit/b0df560))
+
+[1.0.2]: https://github.com/PaulRBerg/devkit/releases/tag/v1.0.2
+
 ## [1.0.1] - 2026-06-30
 
 ### Changed
