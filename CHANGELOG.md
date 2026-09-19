@@ -8,6 +8,15 @@ This package does not follow [Semantic Versioning](https://semver.org/spec/v2.0.
 pragmatically: any release may include breaking changes regardless of the version number, and the major version is not
 reserved for breaking changes. Review the changelog before upgrading.
 
+## [1.0.3] - 2026-09-19
+
+### Fixed
+
+- Fix Vitest 4/5 startup with omitted options ([`567ace6`](https://github.com/PaulRBerg/devkit/commit/567ace6))
+- Replace the removed Vitest CI reporter ([`567ace6`](https://github.com/PaulRBerg/devkit/commit/567ace6))
+
+[1.0.3]: https://github.com/PaulRBerg/devkit/releases/tag/v1.0.3
+
 ## [1.0.2] - 2026-07-08
 
 ### Changed
