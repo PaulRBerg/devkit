@@ -69,9 +69,13 @@ GLOBS_SHELL := ```
     echo "Running TSV validation tests..."
     bats tests/tsv.bats
 
-# Run all BATS tests
+# Test the packed package against Vitest 4 and 5 in isolated consumers
 [group("tests")]
-@test:
+@test-vitest:
+    node --test tests/vitest-compat.test.mjs
+
+# Run all tests
+[group("tests")]
+@test: test-vitest
     bats tests/*.bats
 alias t := test
-

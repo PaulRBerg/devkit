@@ -67,6 +67,8 @@ Available presets:
 
 ### Vitest
 
+The factory supports Vitest 4 and 5. Use the Node.js and Vite versions required by your chosen Vitest release.
+
 Use the devkit vitest config factory in your `vitest.config.ts`:
 
 ```typescript
@@ -84,7 +86,10 @@ The config provides CI-aware defaults:
 - `globals: true`
 - `retry: 2` in CI, `0` locally
 - `testTimeout: 30s` in CI, `10s` locally
-- `reporters: ["basic"]` in CI, `["verbose"]` locally
+- `reporters: ["default"]` in CI, `["verbose"]` locally
+
+Absent optional settings preserve Vitest's defaults. `coverage: true` selects the V8 provider; install the matching
+`@vitest/coverage-v8` version and run Vitest with `--coverage` to collect coverage.
 
 For merging with existing Vite configs:
 

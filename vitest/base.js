@@ -15,12 +15,12 @@ export function defineDevkitConfig(options = {}) {
 
   const baseConfig = {
     test: {
-      coverage: options.coverage ? { provider: "v8" } : undefined,
+      ...(options.coverage ? { coverage: { provider: "v8" } } : {}),
       environment: options.environment ?? "node",
       globals: true,
-      reporters: isCI ? ["basic"] : ["verbose"],
+      reporters: isCI ? ["default"] : ["verbose"],
       retry: isCI ? 2 : 0,
-      setupFiles: options.setupFiles,
+      ...(options.setupFiles ? { setupFiles: options.setupFiles } : {}),
       testTimeout: isCI ? 30_000 : 10_000,
     },
   };

@@ -12,7 +12,7 @@ tsconfig/       TypeScript presets (base, build, next)
 vitest/         Vitest config factory (base.js)
 actions/        GitHub Actions (setup, node-cache)
 vscode/         Shared VSCode settings
-tests/          BATS tests for CSV/TSV validation
+tests/          BATS CSV/TSV tests and packed-package Vitest compatibility tests
 ```
 
 ## Package Exports
@@ -32,7 +32,8 @@ tests/          BATS tests for CSV/TSV validation
 just full-check      # Run all checks (prettier, biome, shell)
 just full-write      # Run all fixes
 just shell-check     # ShellCheck + shfmt
-just test            # Run all BATS tests
+just test            # Run BATS and Vitest compatibility tests
+just test-vitest     # Test the packed package against Vitest 4 and 5
 just test-csv        # Run CSV validation tests
 just test-tsv        # Run TSV validation tests
 ```
@@ -54,5 +55,7 @@ just test-tsv        # Run TSV validation tests
 - Biome linting: recommended rules with customizations (see `biome/base.jsonc`)
 - Just settings: `bash -euo pipefail`, `unstable` mode enabled
 - Vitest factory (`defineDevkitConfig`) provides CI-aware defaults (retry, timeout, reporters)
+- After changing the Vitest factory or its package exports, run `just test-vitest`. It requires Node.js >= 22.12 and npm
+  registry access, installs pinned Vitest 4/5 consumers in temporary directories, and tests the packed package.
 - After modifying Markdown files, run `just prettier-write` to format them
 - After modifying `just/csv.just`, run `just test` to verify the BATS tests pass
