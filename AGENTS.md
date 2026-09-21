@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 Personal shared configuration library (`@prb/devkit`). Provides reusable Biome, Prettier, TypeScript, Vitest, and Just
 configs, plus GitHub Actions.
