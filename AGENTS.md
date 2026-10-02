@@ -44,7 +44,7 @@ just test-tsv        # Run TSV validation tests
 - **Node.js** >= 20 (ESM)
 - **Biome** v2 for linting/formatting JS/TS/JSON
 - **Prettier** for Markdown, YAML
-- **Just** as task runner
+- **Just** >= 1.55.0 as task runner (setup action pins 1.58.0)
 - **BATS** for shell testing
 - **ShellCheck** + **shfmt** for shell script quality
 
