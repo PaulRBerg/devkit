@@ -74,8 +74,13 @@ GLOBS_SHELL := ```
 @test-vitest:
     node --test tests/vitest-compat.test.mjs
 
+# Test Vercel deployment URL capture
+[group("tests")]
+@test-vercel:
+    PYTHONDONTWRITEBYTECODE=1 python3 -W error::ResourceWarning -m unittest discover -s tests -p 'vercel_helpers_test.py' -v
+
 # Run all tests
 [group("tests")]
-@test: test-vitest
+@test: test-vitest test-vercel
     bats tests/*.bats
 alias t := test

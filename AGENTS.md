@@ -12,7 +12,7 @@ tsconfig/       TypeScript presets (base, build, next)
 vitest/         Vitest config factory (base.js)
 actions/        GitHub Actions (setup, node-cache)
 vscode/         Shared VSCode settings
-tests/          BATS CSV/TSV tests and packed-package Vitest compatibility tests
+tests/          BATS CSV/TSV, Python Vercel helper, and packed-package Vitest compatibility tests
 ```
 
 ## Package Exports
@@ -32,8 +32,9 @@ tests/          BATS CSV/TSV tests and packed-package Vitest compatibility tests
 just full-check      # Run all checks (prettier, biome, shell)
 just full-write      # Run all fixes
 just shell-check     # ShellCheck + shfmt
-just test            # Run BATS and Vitest compatibility tests
+just test            # Run BATS, Vercel helper, and Vitest compatibility tests
 just test-vitest     # Test the packed package against Vitest 4 and 5
+just test-vercel     # Test Vercel deployment URL capture
 just test-csv        # Run CSV validation tests
 just test-tsv        # Run TSV validation tests
 ```
