@@ -8,6 +8,17 @@ This package does not follow [Semantic Versioning](https://semver.org/spec/v2.0.
 pragmatically: any release may include breaking changes regardless of the version number, and the major version is not
 reserved for breaking changes. Review the changelog before upgrading.
 
+## [1.0.4] - 2026-10-02
+
+### Fixed
+
+- Parse structured Vercel deployment output and validate the deployment URL
+  ([`515a319`](https://github.com/PaulRBerg/devkit/commit/515a319))
+- Close subprocess output after capturing the deployment URL
+  ([`515a319`](https://github.com/PaulRBerg/devkit/commit/515a319))
+
+[1.0.4]: https://github.com/PaulRBerg/devkit/releases/tag/v1.0.4
+
 ## [1.0.3] - 2026-09-19
 
 ### Fixed
