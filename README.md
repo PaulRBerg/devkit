@@ -22,7 +22,7 @@ bun add @prb/devkit
 
 ### Biome
 
-Extend the base Biome configuration in your `biome.jsonc`:
+The Biome configs require `@biomejs/biome` 2.5 or later. Extend the base Biome configuration in your `biome.jsonc`:
 
 ```jsonc
 {
