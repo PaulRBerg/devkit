@@ -122,6 +122,7 @@ Available modules:
 | --------------- | ------------------------------- |
 | `base.just`     | Common development recipes      |
 | `csv.just`      | CSV/TSV validation with qsv     |
+| `evm.just`      | Solidity and Foundry recipes    |
 | `npm.just`      | NPM package management          |
 | `settings.just` | Just settings and configuration |
 | `vercel.just`   | Vercel build and deploy         |

@@ -7,7 +7,7 @@ configs, plus GitHub Actions.
 
 ```
 biome/          Biome v2 configs (base.jsonc, ui.jsonc)
-just/           Just recipe modules (base, csv, npm, settings, vercel)
+just/           Just recipe modules (base, csv, evm, npm, settings, vercel)
 tsconfig/       TypeScript presets (base, build, next)
 vitest/         Vitest config factory (base.js)
 actions/        GitHub Actions (setup, node-cache)
