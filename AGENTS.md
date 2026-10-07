@@ -39,6 +39,17 @@ just test-csv        # Run CSV validation tests
 just test-tsv        # Run TSV validation tests
 ```
 
+## Releases
+
+- npm publishing runs only in `.github/workflows/release.yml` through npm trusted publishing in staged mode. Never run
+  `npm publish`, `npm stage approve`, or `npm stage reject` locally. The `publish` recipes in `just/npm.just` are for
+  consumer repositories, not for this package.
+- To ship: bump the version and changelog, commit, create the annotated tag `vX.Y.Z` (prerelease: `vX.Y.Z-beta.N`), push
+  the commit, then run `git push origin <tag>`.
+- CI stages the version. It stays unpublished until the maintainer approves it with 2FA on npmjs.com (Staged Packages)
+  or `npm stage approve <stage-id>`. Prereleases use their identifier as the dist-tag.
+- Setup, once: `npm trust github @prb/devkit --repo PaulRBerg/devkit --file release.yml --allow-stage-publish -y`
+
 ## Tech Stack
 
 - **Node.js** >= 20 (ESM)
