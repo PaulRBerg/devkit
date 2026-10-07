@@ -8,6 +8,14 @@ This package does not follow [Semantic Versioning](https://semver.org/spec/v2.0.
 pragmatically: any release may include breaking changes regardless of the version number, and the major version is not
 reserved for breaking changes. Review the changelog before upgrading.
 
+## [1.1.0] - 2026-10-07
+
+### Added
+
+- Add the `evm.just` module with Foundry and Solidity recipes ported from `@sablier/devkit`
+
+[1.1.0]: https://github.com/PaulRBerg/devkit/releases/tag/v1.1.0
+
 ## [1.0.4] - 2026-10-02
 
 ### Fixed
