@@ -8,6 +8,14 @@ This package does not follow [Semantic Versioning](https://semver.org/spec/v2.0.
 pragmatically: any release may include breaking changes regardless of the version number, and the major version is not
 reserved for breaking changes. Review the changelog before upgrading.
 
+## [1.1.1] - 2026-10-07
+
+### Changed
+
+- Declare `@biomejs/biome` `>=2.5.0` as an optional peer dependency, since the Biome configs require it
+
+[1.1.1]: https://github.com/PaulRBerg/devkit/releases/tag/v1.1.1
+
 ## [1.1.0] - 2026-10-07
 
 ### Added
