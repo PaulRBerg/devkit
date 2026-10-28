@@ -8,6 +8,27 @@ This package does not follow [Semantic Versioning](https://semver.org/spec/v2.0.
 pragmatically: any release may include breaking changes regardless of the version number, and the major version is not
 reserved for breaking changes. Review the changelog before upgrading.
 
+## [1.2.0] - 2026-10-28
+
+### Changed
+
+- Require Biome 2.6.2 or later and support composition with Ultracite 8.1.0
+- Rename the disabled Tailwind sorting rule for Biome 2.6, preserving ESLint's class-ordering policy
+- Allow React Compiler to memoize JSX callbacks without requiring manual `useCallback`
+- Preserve Prettier ownership of Markdown and YAML formatting after Biome adds support
+
+### Added
+
+- Test packed Biome presets against Biome 2.6.2 and Ultracite 8.1.0
+- Run shared quality checks and helper tests in CI
+
+### Fixed
+
+- Count CSV/TSV validation errors with the report's TSV delimiter
+- Make shell formatting portable in CI
+
+[1.2.0]: https://github.com/PaulRBerg/devkit/releases/tag/v1.2.0
+
 ## [1.1.1] - 2026-10-07
 
 ### Changed

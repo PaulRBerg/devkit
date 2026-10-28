@@ -95,6 +95,17 @@
       }
     }
   },
+  // Prettier owns Markdown and YAML formatting in consuming projects.
+  "markdown": {
+    "formatter": {
+      "enabled": false
+    }
+  },
+  "yaml": {
+    "formatter": {
+      "enabled": false
+    }
+  },
   "overrides": [
     {
       // Disabling sorted keys because ordering is often important in JSON files

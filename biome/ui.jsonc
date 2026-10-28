@@ -1,7 +1,7 @@
 // Devkit UI configuration for Biome v2
 //
 // Extends base configuration with UI-specific rules for accessibility,
-// Tailwind CSS class sorting, and CSS modules support.
+// React Compiler, and CSS modules support.
 //
 // IMPORTANT: Consumers must extend BOTH configs and add their own
 // `files.includes` patterns. For example:
@@ -42,11 +42,14 @@
         "useExhaustiveDependencies": "off" // doesn't work with React Compiler: https://github.com/biomejs/biome/issues/5293
       },
       "nursery": {
-        // Tailwind class ordering is handled by ESLint (better-tailwindcss/enforce-consistent-class-order).
-        // Biome's useSortedClasses lacks a Tailwind v4 sort preset and sorts text-* utilities alphabetically,
-        // interleaving font-size (text-sm) with color (text-red-500) utilities.
-        // Tracked upstream: https://github.com/biomejs/biome/issues/1274
-        "useSortedClasses": "off"
+        // ESLint owns class ordering with the project's better-tailwindcss configuration.
+        // Biome 2.6 supports Tailwind v4, but enabling a second sorter can conflict with that policy.
+        "useTailwindSortedClasses": "off"
+      },
+      "performance": {
+        // React Compiler memoizes callbacks; this rule cannot account for compiler output.
+        // https://react.dev/reference/react/useCallback
+        "noJsxPropsBind": "off"
       },
       "style": {
         // Promoted out of nursery in Biome 2.5.0.

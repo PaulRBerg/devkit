@@ -22,7 +22,7 @@ bun add @prb/devkit
 
 ### Biome
 
-The Biome configs require `@biomejs/biome` 2.5 or later. Extend the base Biome configuration in your `biome.jsonc`:
+The Biome configs require `@biomejs/biome` 2.6.2 or later. Extend the base Biome configuration in your `biome.jsonc`:
 
 ```jsonc
 {
@@ -38,6 +38,10 @@ For UI projects, extend both the base and UI configurations:
   "extends": ["@prb/devkit/biome", "@prb/devkit/biome/ui"],
 }
 ```
+
+The presets also compose with Ultracite 8.1.0's `biome/core`, `biome/react`, and `biome/next` presets. List Ultracite
+first and Devkit afterward so Devkit's overrides apply. The UI preset supports React Compiler callbacks and leaves
+Tailwind class ordering to ESLint's project configuration.
 
 ### Prettier
 
@@ -132,7 +136,7 @@ Available modules:
 | Tool        | Config File/Directory                    |
 | ----------- | ---------------------------------------- |
 | 🔍 Biome    | [`biome/`](./biome/)                     |
-| 🛠 Just     | [`just/`](./just/)                       |
+| 🛠 Just      | [`just/`](./just/)                       |
 | ✨ Prettier | [`.prettierrc.json`](./.prettierrc.json) |
 | 📦 TSConfig | [`tsconfig/`](./tsconfig/)               |
 | 🧪 Vitest   | [`vitest/`](./vitest/)                   |

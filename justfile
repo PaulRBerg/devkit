@@ -70,6 +70,11 @@ GLOBS_SHELL := ```
     echo "Running TSV validation tests..."
     bats tests/tsv.bats
 
+# Test the packed Biome configs with Ultracite in isolated consumers
+[group("tests")]
+@test-biome:
+    node --test tests/biome-compat.test.mjs
+
 # Test the packed package against Vitest 4 and 5 in isolated consumers
 [group("tests")]
 @test-vitest:
@@ -82,6 +87,6 @@ GLOBS_SHELL := ```
 
 # Run all tests
 [group("tests")]
-@test: test-vitest test-vercel
+@test: test-biome test-vitest test-vercel
     bats tests/*.bats
 alias t := test

@@ -12,7 +12,7 @@ tsconfig/       TypeScript presets (base, build, next)
 vitest/         Vitest config factory (base.js)
 actions/        GitHub Actions (setup, node-cache)
 vscode/         Shared VSCode settings
-tests/          BATS CSV/TSV, Python Vercel helper, and packed-package Vitest compatibility tests
+tests/          BATS CSV/TSV, Python Vercel helper, and packed-package Biome/Vitest compatibility tests
 ```
 
 ## Package Exports
@@ -32,7 +32,8 @@ tests/          BATS CSV/TSV, Python Vercel helper, and packed-package Vitest co
 just full-check      # Run all checks (prettier, biome, shell)
 just full-write      # Run all fixes
 just shell-check     # ShellCheck + shfmt for .sh, .bash, and .bats files
-just test            # Run BATS, Vercel helper, and Vitest compatibility tests
+just test            # Run BATS, Vercel helper, and Biome/Vitest compatibility tests
+just test-biome      # Test the packed presets with Biome 2.6.2 and Ultracite 8.1.0
 just test-vitest     # Test the packed package against Vitest 4 and 5
 just test-vercel     # Test Vercel deployment URL capture
 just test-csv        # Run CSV validation tests
@@ -69,6 +70,9 @@ Pushes to `main` and pull requests run `just full-check` and `just test` in `.gi
 - Biome linting: recommended rules with customizations (see `biome/base.jsonc`)
 - Just settings: `bash -euo pipefail`, `unstable` mode enabled
 - Vitest factory (`defineDevkitConfig`) provides CI-aware defaults (retry, timeout, reporters)
+- After changing Biome presets or their exports, run `just test-biome`. It requires npm registry access, installs a
+  pinned Biome 2.6.2/Ultracite 8.1.0 consumer in a temporary directory, and tests the packed base/UI/Next
+  configurations.
 - After changing the Vitest factory or its package exports, run `just test-vitest`. It requires Node.js >= 22.12 and npm
   registry access, installs pinned Vitest 4/5 consumers in temporary directories, and tests the packed package.
 - After modifying Markdown files, run `just prettier-write` to format them
