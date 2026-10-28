@@ -83,8 +83,8 @@ _csv-show-errors file:
         print(f"Error file not found: {error_file}")
         sys.exit(0)
 
-    # Count errors (qsv auto-detects delimiter based on file extension)
-    result = subprocess.run(["qsv", "count", error_file], capture_output=True, text=True)
+    # Count errors using the validation report's TSV delimiter
+    result = subprocess.run(["qsv", "count", "--delimiter", "\t", error_file], capture_output=True, text=True)
     try:
         total = int(result.stdout.strip()) if result.returncode == 0 and result.stdout.strip() else 0
     except ValueError:

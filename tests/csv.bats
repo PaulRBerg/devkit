@@ -287,6 +287,8 @@ EOF
   # Validate with schema (this should create the error file)
   run just _csv-check --glob "${TEST_TEMP_DIR}/invalid_schema.csv" --schema "$schema_file"
 
+  assert_failure
+
   # The error file should now exist
   [ -f "${temp_invalid}.validation-errors.tsv" ]
 
@@ -294,5 +296,10 @@ EOF
   run just _csv-show-errors "$temp_invalid"
 
   assert_success
-  assert_output --partial "Validation errors:"
+  assert_output --partial 'First 20 validation errors \(2 total\):'
+  assert_output --partial "age"
+  assert_output --partial "not-a-number"
+  assert_output --partial "email"
+  assert_output --partial "not-an-email"
+  assert_output --partial "Full details: ${temp_invalid}.validation-errors.tsv"
 }
