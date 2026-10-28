@@ -31,13 +31,15 @@ tests/          BATS CSV/TSV, Python Vercel helper, and packed-package Vitest co
 ```bash
 just full-check      # Run all checks (prettier, biome, shell)
 just full-write      # Run all fixes
-just shell-check     # ShellCheck + shfmt
+just shell-check     # ShellCheck + shfmt for .sh, .bash, and .bats files
 just test            # Run BATS, Vercel helper, and Vitest compatibility tests
 just test-vitest     # Test the packed package against Vitest 4 and 5
 just test-vercel     # Test Vercel deployment URL capture
 just test-csv        # Run CSV validation tests
 just test-tsv        # Run TSV validation tests
 ```
+
+Pushes to `main` and pull requests run `just full-check` and `just test` in `.github/workflows/ci.yml`.
 
 ## Releases
 

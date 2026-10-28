@@ -22,6 +22,7 @@ GLOBS_SHELL := ```
     shopt -s globstar nullglob
     arr=(
         **/*.bats
+        **/*.bash
         **/*.sh
     )
     echo "${arr[@]}"

@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./actions/setup
+        with:
+          save-cache: true
+
+      - name: Install shell checkers
+        uses: taiki-e/install-action@v2
+        with:
+          tool: shellcheck,shfmt
+
+      - name: Install test tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes bats python3
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Cache qsv
+        id: qsv-cache
+        uses: actions/cache@v5
+        with:
+          path: ~/.local/bin/qsv
+          key: qsv-27.0.1-${{ runner.os }}-${{ runner.arch }}
+
+      - name: Install qsv
+        if: steps.qsv-cache.outputs.cache-hit != 'true'
+        run: |
+          curl --fail --location --output "$RUNNER_TEMP/qsv.zip" \
+            https://github.com/dathere/qsv/releases/download/27.0.1/qsv-27.0.1-x86_64-unknown-linux-gnu.zip
+          python3 -c 'import sys, zipfile; zipfile.ZipFile(sys.argv[1]).extract("qsv", sys.argv[2])' \
+            "$RUNNER_TEMP/qsv.zip" "$RUNNER_TEMP/qsv"
+          mkdir -p "$HOME/.local/bin"
+          install "$RUNNER_TEMP/qsv/qsv" "$HOME/.local/bin/qsv"
+
+      - name: Verify qsv
+        run: qsv --version
+
+      - name: Run quality checks
+        run: just full-check
+
+      - name: Run tests
+        run: just test

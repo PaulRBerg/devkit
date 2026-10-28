@@ -132,7 +132,7 @@ alias pc := prettier-check
         {{ globs }}
 alias pw := prettier-write
 
-# Type check with TypeScript (tsc — TypeScript 7's native compiler)
+# Type check with TypeScript (tsc)
 [group("checks"), no-cd]
 [arg("project", long, short, help="Path to tsconfig.json")]
 type-check project="tsconfig.json":

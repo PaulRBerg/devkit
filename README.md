@@ -31,11 +31,11 @@ The Biome configs require `@biomejs/biome` 2.5 or later. Extend the base Biome c
 }
 ```
 
-For UI projects, use the UI variant:
+For UI projects, extend both the base and UI configurations:
 
 ```jsonc
 {
-  "extends": ["@prb/devkit/biome/ui"],
+  "extends": ["@prb/devkit/biome", "@prb/devkit/biome/ui"],
 }
 ```
 
