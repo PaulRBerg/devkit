@@ -51,12 +51,12 @@ GLOBS_SHELL := ```
 [group("checks")]
 @shell-check:
     shellcheck -x {{ GLOBS_SHELL }}
-    shfmt -d {{ GLOBS_SHELL }}
+    shfmt -i 2 -d {{ GLOBS_SHELL }}
 
 # Format shell scripts with shfmt
 [group("checks")]
 @shell-write:
-    shfmt -w {{ GLOBS_SHELL }}
+    shfmt -i 2 -w {{ GLOBS_SHELL }}
 
 # Run CSV validation tests using BATS
 [group("tests")]
